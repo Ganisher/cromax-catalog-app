@@ -22,6 +22,8 @@ return new class extends Migration
             $table->tinyInteger('sort_order')->unsigned()->default(0);
             $table->tinyInteger('status')->unsigned()->default(0);
             $table->timestamps();
+
+            $table->index(['sku', 'title', 'slug', 'sort_order', 'status']);
         });
     }
 
