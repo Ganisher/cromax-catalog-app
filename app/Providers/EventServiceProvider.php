@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Events\CategorySaving;
+use App\Events\ProductSaving;
 use App\Listeners\GenerateCategorySlug;
+use App\Listeners\GenerateProductSlug;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -22,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         CategorySaving::class => [
             GenerateCategorySlug::class,
+        ],
+        ProductSaving::class => [
+            GenerateProductSlug::class,
         ],
     ];
 
